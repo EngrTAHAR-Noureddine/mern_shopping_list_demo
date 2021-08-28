@@ -1,3 +1,19 @@
-.App {
-  text-align: center;
+.remove-btn{
+  margin-right: 0.5rem;
+}
+/* its standar to add enter, enter-active, exit, exit-active => of css transition */
+.fade-enter{
+  opacity: 0.01;
+}
+.fade-enter-active{
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-exit-active{
+  opacity: 0.01;
+  transition: opacity 1000ms ease-in;
+
 }
