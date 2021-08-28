@@ -1,0 +1,25 @@
+{
+  "name": "mern_shopping_list_demo",
+  "version": "1.0.0",
+  "description": "Shopping List using MERN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EngrTAHAR-Noureddine/mern_shopping_list_demo.git"
+  },
+  "author": "TAHAR Noureddine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EngrTAHAR-Noureddine/mern_shopping_list_demo/issues"
+  },
+  "homepage": "https://github.com/EngrTAHAR-Noureddine/mern_shopping_list_demo#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.2.1",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.2"
+  }
+}
