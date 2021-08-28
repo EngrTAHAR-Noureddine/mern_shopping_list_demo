@@ -4,11 +4,11 @@
   "description": "Shopping List using MERN",
   "main": "server.js",
   "scripts": {
-    "client-install":"npm install --prefix client",
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "server":"nodemon server.js",
-    "client":"npm start --prefix client",
-    "dev":"concurrently \"npm run server\" \"npm run client\""
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,13 @@
   "homepage": "https://github.com/EngrTAHAR-Noureddine/mern_shopping_list_demo#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "bootstrap": "^5.1.0",
     "concurrently": "^6.2.1",
     "express": "^4.17.1",
-    "mongoose": "^6.0.2"
+    "mongoose": "^6.0.2",
+    "react-transition-group": "^4.4.2",
+    "reactstrap": "^8.9.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
