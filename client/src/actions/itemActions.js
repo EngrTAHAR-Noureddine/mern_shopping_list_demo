@@ -2,7 +2,7 @@ import axios from 'axios';
 import {ADD_ITEM,DELETE_ITEM,GET_ITEMS,ITEMS_LOADING} from './types';
 
 export const getItem = () => dispatch =>{
-   dispatch(setItemLoading()); //return true
+   dispatch(setItemLoading()); /*return true*/
    axios.get('/api/items')
         .then(res=>dispatch({
             type:GET_ITEMS,

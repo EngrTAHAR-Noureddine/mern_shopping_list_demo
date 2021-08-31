@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import {ADD_ITEM,DELETE_ITEM,GET_ITEMS,ITEMS_LOADING} from '../actions/types';
 const initialState = {
     items:[],
