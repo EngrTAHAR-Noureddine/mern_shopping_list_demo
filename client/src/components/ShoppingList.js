@@ -3,12 +3,15 @@ import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { v4 as uuidv4 } from 'uuid';
 import {connect} from 'react-redux';
-import {getItem} from '../actions/itemActions';
+import {getItem,deleteItem} from '../actions/itemActions';
 import PropTypes from 'prop-types';
 class ShoppingList extends Component{  
     componentDidMount(){
         // call when mount the page
         this.props.getItem();
+    }
+    onDeleteClick = id =>{
+        this.props.deleteItem(id);
     }
     render() {
         const {items} = this.props.item; // to get list from prop that is state 
@@ -17,14 +20,7 @@ class ShoppingList extends Component{
                 <Button
                     color="dark"
                     style={{marginBottom:'2rem'}}
-                    onClick = {()=>{
-                        const name = prompt('Enter Item');
-                        if(name){
-                            this.setState(state=>({
-                                items:[...state.items,{id:uuidv4(),name}]
-                            }));
-                        }
-                    }}
+                     onClick = {()=>{}}
                     >Add Item</Button>
                     <ListGroup>
                         <TransitionGroup className="shopping-list">
@@ -36,11 +32,7 @@ class ShoppingList extends Component{
                                                 className="remove-btn"
                                                 color="danger"
                                                 size="sm"
-                                                onClick={()=>{
-                                                    this.setState(state=>({
-                                                        items:state.items.filter(item=>item.id!==id)
-                                                    }))
-                                                }}
+                                                onClick={this.onDeleteClick.bind(this,id)}
                                                 >&times;</Button>
                                                 
                                                 {name}
@@ -67,4 +59,7 @@ const mapStateToProps=(state)=>({
 //* connect react UI with redux by connect(redux-stuff)(reactComponenet-stuff)
 // redux-stuff such as : func to return state to props for connecting with react
 // second pram is actions 
-export default connect(mapStateToProps,{getItem})(ShoppingList);
+export default connect(
+    mapStateToProps,
+    {getItem,deleteItem}
+    )(ShoppingList);
