@@ -1,7 +1,6 @@
 import React , { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { v4 as uuidv4 } from 'uuid';
 import {connect} from 'react-redux';
 import {getItem,deleteItem} from '../actions/itemActions';
 import PropTypes from 'prop-types';
@@ -17,11 +16,6 @@ class ShoppingList extends Component{
         const {items} = this.props.item; // to get list from prop that is state 
         return (
             <Container>
-                <Button
-                    color="dark"
-                    style={{marginBottom:'2rem'}}
-                     onClick = {()=>{}}
-                    >Add Item</Button>
                     <ListGroup>
                         <TransitionGroup className="shopping-list">
                             {
