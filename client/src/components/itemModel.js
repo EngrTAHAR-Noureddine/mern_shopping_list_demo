@@ -53,16 +53,14 @@ class ItemModel extends Component{
                         <ModalBody>
                             <Form onSubmit={this.onSubmit}>
                                 <FormGroup>
-                                    <Label for="Item">
-                                        <Input 
+                                    <Label for="Item">Item</Label>
+                                    <Input 
                                         type="text"
                                         name="name"
                                         id="item"
                                         placeholder="Add shopping item"
                                         onChange={this.onChange}
-                                        >
-                                        </Input>
-                                    </Label>
+                                        />
                                     <Button color="dark" style={{margin:'2rem'}} block>
                                         Add Item
                                     </Button>

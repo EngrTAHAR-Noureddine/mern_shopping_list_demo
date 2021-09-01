@@ -9,6 +9,8 @@ import {
     NavLink,
     Container
 } from 'reactstrap';
+import RegisterModel from './auth/RegisterModel';
+import Logout from './auth/Logout';
 
 class AppNavbar extends Component{
         state = {
@@ -28,10 +30,17 @@ class AppNavbar extends Component{
                         <NavbarToggler onClick={this.toggle}></NavbarToggler>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
-                                <NavLink href="https://github.com/EngrTAHAR-Noureddine/mern_shopping_list_demo">
-                                    Github
-                                </NavLink>
-                                
+                                <NavItem>
+                                    <RegisterModel/>
+                                </NavItem>
+                                <NavItem>
+                                    <Logout/>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="https://github.com/EngrTAHAR-Noureddine/mern_shopping_list_demo">
+                                        Github
+                                    </NavLink>
+                                </NavItem>
                             </Nav>
                         </Collapse>
                     </Container>
