@@ -30,6 +30,11 @@ export const loadUser = () => (dispatch, getState) => {
         });
       });
   };
+
+
+
+
+
 // Register User
 export const register = ({ name, email, password }) => (
   dispatch
@@ -46,13 +51,15 @@ export const register = ({ name, email, password }) => (
 
   axios
     .post('/api/auth/register', body, config)
-    .then(res =>
+    .then(res =>{
+      
       dispatch({
         type: REGISTER_SUCCESS,
         payload: res.data
       })
-    )
+    })
     .catch(err => {
+      
       dispatch(
         returnErrors(err.response.data, err.response.status, 'REGISTER_FAIL')
       );
@@ -68,6 +75,40 @@ export const logout = () => {
     type: LOGOUT_SUCCESS
   };
 };
+
+
+//Login User 
+export const login = ({ email, password }) =>  dispatch => {
+  // Headers
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+  // Request body
+  const body = JSON.stringify({ email, password });
+
+  axios
+    .post('/api/auth', body, config)
+    .then(res =>
+      
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data
+      })
+   )
+    .catch(err => {
+      
+      dispatch(
+        returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL')
+      );
+      dispatch({
+        type: REGISTER_FAIL
+      });
+    });
+};
+
 
 
   // Setup config/headers and token
